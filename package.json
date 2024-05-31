@@ -1,0 +1,21 @@
+{
+  "name": "gizmo-automation",
+  "version": "1.0.0",
+  "description": "gizmo project automation for web site using cypress with javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Gizmo",
+    "Hytech"
+  ],
+  "author": "Jose Miguel Mateo Santos",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.9.0",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-xpath": "^2.0.1",
+    "mocha": "^10.4.0"
+  }
+}
