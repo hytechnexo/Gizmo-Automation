@@ -2,7 +2,7 @@
 
 describe("Organizationsv2 Proccess", () => {
 
-/*
+
     
     it("Super User must be taken to an internal page with all the organizations created when clicking on Organizationsv2 Link", () => {
 
@@ -473,7 +473,7 @@ it("When super user click on Delete button in commission rates by production ran
 
 });
 
-*/
+
 
 it("Super user should be able to add users under the Organizationsv2 created", () => {
     cy.visit('https://gizmo.local/user/login');
@@ -515,7 +515,7 @@ it("Super user should be able to add users under the Organizationsv2 created", (
 
     cy.get("#password").should("be.visible").type("CypressPassword24");
     cy.get("#confirm_password").should("be.visible").type("CypressPassword24");
-    cy.get("#create_email").should("be.visible").type("cypressautomation@hytechhome.com");
+    cy.get("#create_email").should("be.visible").type("cypressautomationhome@hytechhome.com");
 
     cy.get("#select2-create_job_title_id-container").should("be.visible");
     cy.get("#select2-create_job_title_id-container").click();
@@ -543,7 +543,8 @@ it("Super user should be able to add users under the Organizationsv2 created", (
 });
 
 
-/*
+
+
 
 it("Super user should be able to reset password from users under the organization", () => {
 
@@ -856,8 +857,6 @@ it("Super user should be able to see preview of the file or attachment", () => {
 
 });
 
-
-*/
 
 
 });

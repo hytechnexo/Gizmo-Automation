@@ -1,4 +1,3 @@
-```markdown
 # Gizmo Cypress Automation
 
 This project automates the Gizmo website using Cypress with JavaScript.
@@ -13,9 +12,8 @@ This project automates the Gizmo website using Cypress with JavaScript.
 ## Installation
 
 1. Clone the repository:
-
    ```bash
-   git clone https://github.com/hytechnexo/Gizmo-Cypress-Automation.git
+   git clone git@github.com:hytechnexo/Gizmo-Automation.git
    ```
 
 2. Navigate to the project directory:
