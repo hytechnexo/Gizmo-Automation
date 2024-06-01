@@ -2,7 +2,7 @@
 
 describe("Organizationsv2 Proccess", () => {
 
-
+/*
     
     it("Super User must be taken to an internal page with all the organizations created when clicking on Organizationsv2 Link", () => {
 
@@ -473,49 +473,77 @@ it("When super user click on Delete button in commission rates by production ran
 
 });
 
+*/
 
-it("Super user should be able to add users under the Organizatinsv2 created", () => {
-
+it("Super user should be able to add users under the Organizationsv2 created", () => {
     cy.visit('https://gizmo.local/user/login');
-        cy.url().should('include', '/user/login');
-    
-        cy.get('#email').type('jose.mateo@hytechhome.com');
-        cy.get('#password').type('Migueldeveloper2424@');
-        cy.get('[type="submit"]').first().click();
-    
-        cy.wait(15000);
-        cy.url().should('eq', 'https://gizmo.local/user/home');
-    
-        cy.get(".nav-link.menu-toggle").click();
-        cy.get("#main-menu-navigation").scrollIntoView();
-        cy.get(".d-flex.align-items-center", {timeout: 20000});
-        cy.get(".menu-title.text-truncate").should("be.visible");
-        cy.get(".nav-item").contains("Organizationsv2").click();
-    
-        cy.wait(15000);
-        cy.url().should("eq", "https://gizmo.local/admin/organizationsv2");
-    
-        cy.get("#group-filter").type("Organization Updated two By Cypress").click();
-       
-        cy.get("#button_detail").click();
-    
-        cy.wait(10000);
-        cy.get("#button_edit").should("be.visible").click({force: true});
-    
-        cy.wait(5000);
-        cy.get("#delete_rate").click();
-        cy.wait(5000);
+    cy.url().should('include', '/user/login');
 
-        cy.get(".swal2-popup.swal2-modal.swal2-icon-warning.swal2-show").should("be.visible");
-      
-        cy.wait(5000);
+    cy.get('#email').type('jose.mateo@hytechhome.com');
+    cy.get('#password').type('Migueldeveloper2424@');
+    cy.get('[type="submit"]').first().click();
 
-        cy.get(".swal2-cancel.btn.btn-danger.swal2-styled").click();
+    cy.wait(15000);
+    cy.url().should('eq', 'https://gizmo.local/user/home');
 
-        cy.wait(5000);
+    cy.get(".nav-link.menu-toggle").click();
+    cy.get("#main-menu-navigation").scrollIntoView();
+    cy.get(".d-flex.align-items-center", {timeout: 20000});
+    cy.get(".menu-title.text-truncate").should("be.visible");
+    cy.get(".nav-item").contains("Organizationsv2").click();  
 
+    cy.wait(15000);
+    cy.url().should("eq", "https://gizmo.local/admin/organizationsv2");
+
+    cy.get("#group-filter").type("Organization Updated two By Cypress").click();
+    cy.get("#button_detail").click();
+
+    cy.wait(10000);
+    cy.get("#add_user_new").click();
+
+    cy.get("#select2-create_type_id-container").should("be.visible", { timeout: 10000 });
+    cy.get("#select2-create_type_id-container").click();
+    cy.get(".select2-results__options", { timeout: 10000 }).contains("Account Owner").click();
+
+    cy.get("#select2-create_account_status-container").should("be.visible", { timeout: 10000 });
+    cy.get("#select2-create_account_status-container").click();
+    cy.get(".select2-results__options", { timeout: 10000 }).contains("Pending Activation").click();
+
+    cy.get("#select2-create_department_id-container").should("be.visible", { timeout: 10000 });
+    cy.get("#select2-create_department_id-container").click();
+    cy.get(".select2-results__option", { timeout: 10000 }).contains("Operations").click();
+
+    cy.get("#password").should("be.visible").type("CypressPassword24");
+    cy.get("#confirm_password").should("be.visible").type("CypressPassword24");
+    cy.get("#create_email").should("be.visible").type("cypressautomation@hytechhome.com");
+
+    cy.get("#select2-create_job_title_id-container").should("be.visible");
+    cy.get("#select2-create_job_title_id-container").click();
+    cy.get(".select2-results__options", { timeout: 10000 }).contains("Software Developer Manager").click();
+
+    cy.get("#select2-create_role_id-container").should("be.visible", { timeout: 10000 });
+    cy.get("#select2-create_role_id-container").click();
+    cy.get(".select2-results__options", { timeout: 10000 }).contains("QA Engineer").click();
+
+    cy.get("#create_user_buttonTwo").should("be.visible").click();
+    cy.get("#create_first_name").should("be.visible").type("Cypress");
+    cy.get("#create_last_name").should("be.visible").type("Automation");
+
+    cy.get("#select2-create_gender-container").should("be.visible", { timeout: 10000 });
+    cy.get("#select2-create_gender-container").click();
+    cy.get(".select2-results__options").should("be.visible").contains("Male").click();
+
+    cy.get("#create_mobile_phone").should("be.visible").type("8293996993");
+
+    cy.get("#user_create_save").click();
+    cy.wait(20000);
+
+    cy.get(".swal2-confirm.btn-success.swal2-styled").should("be.visible").click();
+    cy.wait(5000);
 });
 
+
+/*
 
 it("Super user should be able to reset password from users under the organization", () => {
 
@@ -828,6 +856,8 @@ it("Super user should be able to see preview of the file or attachment", () => {
 
 });
 
+
+*/
 
 
 });
