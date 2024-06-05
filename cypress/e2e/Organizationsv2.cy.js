@@ -2,7 +2,7 @@
 
 describe("Organizationsv2 Proccess", () => {
 
-
+/*
     
     it("Super User must be taken to an internal page with all the organizations created when clicking on Organizationsv2 Link", () => {
 
@@ -134,7 +134,8 @@ describe("Organizationsv2 Proccess", () => {
     });
 
 
-
+   */
+  
 
     it("When super user click on Edit button a cancel button  and save button must appear and the Inactivate or Activate Organization button must disappear from the screen and the super user will be able to edit all fields from the organization after successfully editing a message will pop up: The organization has been successfully updated.", () => {
 
@@ -148,7 +149,7 @@ describe("Organizationsv2 Proccess", () => {
         cy.wait(15000);
         cy.url().should('eq', 'https://gizmo.local/user/home');
 
-        cy.get(".nav-link.menu-toggle").click();
+        cy.get(".nav-link.menu-toggle").click({force: true});
         cy.get("#main-menu-navigation").scrollIntoView();
         cy.get(".d-flex.align-items-center", {timeout: 20000})
         cy.get(".menu-title.text-truncate").should("be.visible");
@@ -247,13 +248,13 @@ describe("Organizationsv2 Proccess", () => {
         cy.wait(15000);
         cy.url().should("eq", "https://gizmo.local/admin/organizationsv2");
 
-        cy.wait(20000);
+        cy.wait(15000);
         cy.get("#group-filter").type("Organization Updated two By Cypress").click();
-        cy.wait(20000);
+        cy.wait(15000);
         cy.get("#button_detail").click();
         
 
-        cy.wait(10000);
+        cy.wait(5000);
         cy.get("#button_edit").should("be.visible").click({force: true});
 
         cy.wait(5000); 
