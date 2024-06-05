@@ -81,7 +81,6 @@ describe("Energy Efficiency Proccess", () => {
 
     };
 
-    /*
 
     it('When super user click on "Energy Efficiency" Link an internal web page will be opened containning Energy Efficiency informations', () => {
 
@@ -109,15 +108,12 @@ describe("Energy Efficiency Proccess", () => {
 
     });
 
-    */
-
     it('When super user click on "Edit" button user will be able to edit energy efficiency name information', () => {
 
         visitLoginPageAndLogin();
         visitEnergyEfficiency();
         findEnergyOwner("Jose Mateo");
         editEnergyEfficiency();
-
 
     });
 
