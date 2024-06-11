@@ -3,7 +3,13 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 module.exports = defineConfig({
-  projectId: '2kqw82',
+  experimentalMemoryManagement: true,
+  numTestsKeptInMemory: 1,
+  video: false,
+  screenshotsFolder: "cypress/screenshots",
+  screenshotsFolder: false,
+  fixturesFolder: "cypress/fixtures",
+  projectId: "2kqw82",
   e2e: {
     experimentalMemoryManagement: true,
     experimentalRunAllSpecs: true,
@@ -13,6 +19,6 @@ module.exports = defineConfig({
       config.env.password = process.env.PASSWORD;
       return config;
     },
-    video: false,
+    baseUrl: "https://gizmo.local/",
   },
 });
