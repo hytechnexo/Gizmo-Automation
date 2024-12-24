@@ -1,4 +1,6 @@
 const { it } = require("mocha");
+import { visitLoginPageAndLogin } from "./GizmoFunctions";
+import { baseUrl } from "./Global";
 
 describe("This is the Gizmo Login Process", () => {
   afterEach(() => {
@@ -7,7 +9,7 @@ describe("This is the Gizmo Login Process", () => {
   });
 
   it("It should display this field is required", () => {
-    cy.visit("https://gizmo.local/user/home");
+    cy.visit(baseUrl);
     cy.url().should("include", "/user/login");
 
     cy.get("#email").clear();
@@ -19,7 +21,7 @@ describe("This is the Gizmo Login Process", () => {
   });
 
   it("It should display Invalid Username/Password", () => {
-    cy.visit("https://gizmo.local/user/home");
+    cy.visit(baseUrl);
     cy.url().should("include", "/user/login");
 
     cy.get("#email").type("jose.mateo@hytechhome.com");
@@ -31,7 +33,7 @@ describe("This is the Gizmo Login Process", () => {
   });
 
   it("It should display Please enter a valid email address.", () => {
-    cy.visit("https://gizmo.local/user/home");
+    cy.visit(baseUrl);
     cy.url().should("include", "/user/login");
 
     cy.get("#email").type("jose.mateo@");
@@ -43,12 +45,6 @@ describe("This is the Gizmo Login Process", () => {
   });
 
   it("It should log in user successfully", () => {
-    cy.visit("https://gizmo.local/user/home");
-
-    cy.get("#email").type("jose.mateo@hytechhome.com");
-    cy.get("#password").type("Migueldeveloper2424@");
-    cy.get("[type='submit']").first().click();
-
-    cy.url().should("equal", "https://gizmo.local/user/home");
+    visitLoginPageAndLogin();
   });
 });

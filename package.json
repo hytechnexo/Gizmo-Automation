@@ -6,7 +6,7 @@
   "scripts": {
     "cy:open": "cross-env NODE_OPTIONS=--max_old_space_size=9096 cypress open",
     "cy:run": "cross-env NODE_OPTIONS=--max_old_space_size=9096 cypress run",
-    "cy:open:chrome": "cross-env NODE_OPTIONS=--max_old_space_size=9096 cypress open --browser chrome"
+    "cy:open:chrome": "cross-env NODE_OPTIONS=--max_old_space_size=18192 cypress open --browser chrome"
   },
   "keywords": [
     "Gizmo",

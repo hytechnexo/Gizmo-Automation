@@ -15,8 +15,6 @@ describe("Organizationsv2 Proccess", () => {
     cy.clearCookies();
   });
 
-  /*
-
   it("Super User must be taken to an internal page with all the organizations created when clicking on Organizationsv2 Link", () => {
     visitLoginPageAndLogin();
     organizationsv2();
@@ -127,8 +125,6 @@ describe("Organizationsv2 Proccess", () => {
 
     cy.wait(5000);
   });
-
-*/
 
   it("When super user clicks on Add new commission range button, 3 new fields will pop up with a delete button by the side. The user will be able to fill out fields.", () => {
     visitLoginPageAndLogin();
